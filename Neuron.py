@@ -98,10 +98,10 @@ class Neuron:
 			# Function to transform the neuron in a string
 		"""
 		
-		chaine = '------- Neuron -------\n'
-		chaine += 'Activation function : ' + self._nameActivationFunction + '\n'
-		chaine += 'Inputs : ' + str(self._inputsList) + '\n'
-		chaine += 'Weights : ' + str(self._weightList) + '\n'
-		chaine += 'Output : ' + str(self.get_output()) + '\n'
-		chaine += 'Error : ' + str(self._error) + '\n'
-		return chaine
+		neuronString = '------- Neuron -------\n'
+		neuronString += 'Activation function : ' + self._nameActivationFunction + '\n'
+		neuronString += 'Inputs : ' + str(self._inputsList) + '\n'
+		neuronString += 'Weights : ' + str(self._weightList) + '\n'
+		neuronString += 'Output : ' + str(self.get_output()) + '\n'
+		neuronString += 'Error : ' + str(self._error) + '\n'
+		return neuronString
