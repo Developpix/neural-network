@@ -3,4 +3,8 @@
 *~1
 *~2
 
+# Python cache
 __pycache__
+
+# Files for the test
+test*
