@@ -1,3 +1,5 @@
+from Neuron import Neuron
+
 ######################################################################
 #
 #	Author: Developpix
@@ -25,8 +27,23 @@ class Layer:
 		"""
 		
 		self._nbNeurons = numberOfNeurons
-		self._neurons = []
+		self._neuronsList = []
 		for i in range(0, numberOfNeurons):
-			neurons.append(Neuron(numberOfNeuronsInTheLayerBefore, nameFunction))
+			self._neuronsList.append(Neuron(numberOfNeuronsInTheLayerBefore, nameFunction))
 	
+	"""
+		# Getters and setters
+	"""
 	
+	def get_neuronsList(self):
+		return self._neuronsList
+	
+	def get_Neuron(self, number):
+		return self._neuronsList[number]
+	
+	def toString(self):
+		layerString = '------------------------- Layer -------------------------\n'
+		for neuron in self._neuronsList:
+			layerString += neuron.toString()
+		return layerString
+		
