@@ -1,3 +1,4 @@
+from functions import *
 from random import random
 
 ######################################################################
@@ -34,7 +35,7 @@ class Neuron:
 		self._lastWeightList = []
 		# Generate a list of weights
 		for i in range(0, nbInputs):
-			self._weigthList[i] = random()
+			self._weightList.append(random())
 		self._lastWeightList = self._weightList
 		self._nameActivationFunction = nameFunction
 		# Define the activation function thanks his name
@@ -87,10 +88,13 @@ class Neuron:
 			self._activationFunction = identity
 	
 	def get_output(self):
-		somme = 0
-		for i in range(0, len(self._weightList)):
-			somme += self._inputsList[i] * self._weightList[i]
-		return self._activationFunction(somme)
+		if (self._inputsList != []):
+			somme = 0
+			for i in range(0, len(self._weightList)):
+				somme += self._inputsList[i] * self._weightList[i]
+			return self._activationFunction(somme)
+		else:
+			return 0
 	
 	def toString(self):
 		
