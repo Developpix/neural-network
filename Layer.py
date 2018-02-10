@@ -42,6 +42,11 @@ class Layer:
 		return self._neuronsList[number]
 	
 	def toString(self):
+		
+		"""
+			# Function to transform the layer in a string
+		"""
+		
 		layerString = '------------------------- Layer -------------------------\n'
 		for neuron in self._neuronsList:
 			layerString += neuron.toString()
