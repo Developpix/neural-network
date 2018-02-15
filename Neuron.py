@@ -41,7 +41,7 @@ class Neuron:
 		# Define the activation function thanks his name
 		if (nameFunction == 'sigmoide'):
 			self._activationFunction = sigmoide
-		elif (nameFunction == 'hyperbolicTangente'):
+		elif (nameFunction == 'hyperbolicTangent'):
 			self._activationFunction = hyperbolicTangent
 		elif (nameFunction == 'identity'):
 			self._activationFunction = identity
@@ -82,7 +82,7 @@ class Neuron:
 		# Define the activation function thanks his new name
 		if (nameNewFunction == 'sigmoide'):
 			self._activationFunction = sigmoide
-		elif (nameNewFunction == 'hyperbolicTangente'):
+		elif (nameNewFunction == 'hyperbolicTangent'):
 			self._activationFunction = hyperbolicTangent
 		elif (nameNewFunction == 'identity'):
 			self._activationFunction = identity
