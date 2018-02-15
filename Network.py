@@ -28,6 +28,7 @@ class Network:
 		"""
 		
 		self._nbLayers = numberOfLayers
+		self._listOfLessons = []
 		self._layersList = []
 		for i in range(0, numberOfLayers):
 			if (i > 0):
@@ -193,4 +194,69 @@ class Network:
 				# Set the new list of weight
 				n.set_weightList(newWeightList)
 	
+	def learn(self, inputs, normalOutputs, learningRate, tolerableError, alpha):
+		
+		"""
+			# A method thanks to that the network can learn
+		"""
+		
+		# Check if the network don't know the inputs
+		if ((inputs, normalOutputs) not in self._listOfLessons):
+			
+			# Add in inputs and normalOutputs to the list of lessons
+			self._listOfLessons.append((inputs, normalOutputs))
+		
+		knowAll = False
+		
+		while (knowAll == False):
+			
+			knowAll = True
+			
+			# Browse list of lessons
+			for i in range(0, len(self._listOfLessons)):
+				
+				inputsList = self._listOfLessons[i][0]
+				normalOutputsList = self._listOfLessons[i][1]
+				
+				self.propagation(inputsList)
+				
+				networkOutputsList = []
+				
+				know = True
+				
+				# Neurons in the last layer 
+				for j in range(0, len(self.get_lastLayer().get_neuronsList())):
+					
+					n = self.get_lastLayer().get_Neuron(j)
+					
+					networkOutputsList.append(n.get_output())
+					
+					if (n.get_output() < (normalOutputsList[j] - tolerableError) or n.get_output() > (normalOutputsList[j] + tolerableError)):
+						
+						know = False
+				
+				if (know == False):
+					
+					knowAll = False
+					
+					while (know == False):
+						
+						know = True
+						
+						# We do a backpropagation and a propagation to check if there is still a error
+						self.backpropagation(normalOutputsList, learningRate, alpha)
+						self.propagation(inputsList)
+						
+						networkOutputsList2 = []
+						
+						# Neurons in the last layer
+						for j in range(0, len(self.get_lastLayer().get_neuronsList())):
+							
+							n = self.get_lastLayer().get_Neuron(j)
+							
+							networkOutputsList2.append(n.get_output())
+							
+							if (n.get_output() < (normalOutputsList[j] - tolerableError) or n.get_output() > (normalOutputsList[j] + tolerableError)):
+								
+								know = False
 	
