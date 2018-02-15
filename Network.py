@@ -35,4 +35,15 @@ class Network:
 				inputsNumberForNeurons = 1
 			self._layersList.append(Layer(listOfNumberOfNeuronsPerLayer[i], inputsNumberForNeurons, nameFunction))
 	
+	"""
+		# Getters and setters
+	"""
 	
+	def get_layersList(self):
+		return self._layersList
+	
+	def get_Layer(self, number):
+		return self._layersList[number]
+	
+	def get_lastLayer(self):
+		return self._laysersList[self._nbLayers-1]
