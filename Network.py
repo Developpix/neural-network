@@ -1,5 +1,6 @@
 from Layer import Layer
 from functions import *
+import pickle
 
 ######################################################################
 #
@@ -260,3 +261,28 @@ class Network:
 								
 								know = False
 	
+	def save(self, fileName):
+		
+		"""
+			# A method to save the network in a file
+		"""
+		
+		with open(fileName, 'wb') as saveFile:
+			data = pickle.Pickler(saveFile)
+			data.dump(self)
+			saveFile.close()
+	
+	def load(self, fileName):
+		
+		"""
+			# Load a network that have been saved in a file
+		"""
+		
+		with open(fileName, 'rb') as saveFile:
+			data = pickle.Unpickler(saveFile)
+			n = data.load()
+			saveFile.close()
+		
+		self._nbLayers = n._nbLayers
+		self._listOfLessons = n._listOfLessons
+		self._layersList = n._layersList
