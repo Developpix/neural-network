@@ -46,7 +46,7 @@ class Network:
 		return self._layersList[number]
 	
 	def get_lastLayer(self):
-		return self._laysersList[self._nbLayers-1]
+		return self._layersList[self._nbLayers-1]
 	
 	def toString(self):
 		
@@ -55,8 +55,41 @@ class Network:
 		"""
 		
 		networkString = '-------------------------- Network --------------------------\n'
-		for i in range(0, slef._nbLayers):
+		for i in range(0, self._nbLayers):
 			networkString += self._layersList[i].toString()
 		networkString += '-------------------------- End of network --------------------------\n'
 		return networkString
+	
+	def propagation(self, inputs):
+		
+		"""
+			# Method for propagation
+		"""
+		
+		# Check if there is the correct number of inputs
+		if (len(inputs) == len(self.get_Layer(0).get_neuronsList())):
+			
+			# Add the input for the neurons in the first layer
+			for i in range(0, len(self.get_Layer(0).get_neuronsList())):
+				
+				self.get_Layer(0).get_Neuron(i).set_inputsList([inputs[i]])
+		else:
+			
+			print('ERROR: The number of inputs is incorrect !')
+		
+		# Disseminate the information
+		for i in range(1, self._nbLayers):
+			
+			# Create a table to store the outputs of the neurons in the layers before
+			inputsList = []
+			
+			# Get the outputs of the neurons in the layer before
+			for j in range(0, len(self.get_Layer(i-1).get_neuronsList())):
+				
+				inputsList.append(self.get_Layer(i-1).get_Neuron(j).get_output())
+			
+			# Add the outputs of the layer before to the inputs of the layer
+			for j in range(0, len(self.get_Layer(i).get_neuronsList())):
+				
+				self.get_Layer(i).get_Neuron(j).set_inputsList(inputsList)
 	
