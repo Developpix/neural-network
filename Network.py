@@ -47,3 +47,16 @@ class Network:
 	
 	def get_lastLayer(self):
 		return self._laysersList[self._nbLayers-1]
+	
+	def toString(self):
+		
+		"""
+			# Method to transform the network in a string 
+		"""
+		
+		networkString = '-------------------------- Network --------------------------\n'
+		for i in range(0, slef._nbLayers):
+			networkString += self._layersList[i].toString()
+		networkString += '-------------------------- End of network --------------------------\n'
+		return networkString
+	
