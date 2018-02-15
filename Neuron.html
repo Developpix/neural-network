@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Neuron</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Neuron</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/thibaut/Projets/Informatique/Programmation/python/neural-network/Neuron.py">/home/thibaut/Projets/Informatique/Programmation/python/neural-network/Neuron.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Neuron.html#Neuron">Neuron</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Neuron">class <strong>Neuron</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>#&nbsp;A&nbsp;class&nbsp;to&nbsp;create&nbsp;a&nbsp;neuron&nbsp;with&nbsp;the&nbsp;next&nbsp;properties:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;An&nbsp;list&nbsp;of&nbsp;inputs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;A&nbsp;list&nbsp;of&nbsp;weights<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;A&nbsp;activation&nbsp;function<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;A&nbsp;name&nbsp;for&nbsp;the&nbsp;activation&nbsp;function<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;A&nbsp;error&nbsp;value<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Neuron-__init__"><strong>__init__</strong></a>(self, nbInputs, nameFunction)</dt><dd><tt>#&nbsp;The&nbsp;constructor&nbsp;for&nbsp;the&nbsp;class&nbsp;<a href="#Neuron">Neuron</a>&nbsp;that&nbsp;takes&nbsp;the&nbsp;following&nbsp;parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;nbInputs:&nbsp;a&nbsp;number&nbsp;of&nbsp;input<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;nameFunction:&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;activation&nbsp;function</tt></dd></dl>
+
+<dl><dt><a name="Neuron-get_error"><strong>get_error</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Neuron-get_inputsList"><strong>get_inputsList</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Neuron-get_lastWeightList"><strong>get_lastWeightList</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Neuron-get_nameActivationFunction"><strong>get_nameActivationFunction</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Neuron-get_output"><strong>get_output</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Neuron-get_weightList"><strong>get_weightList</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Neuron-set_activationFunction"><strong>set_activationFunction</strong></a>(self, nameNewFunction)</dt></dl>
+
+<dl><dt><a name="Neuron-set_error"><strong>set_error</strong></a>(self, newError)</dt></dl>
+
+<dl><dt><a name="Neuron-set_inputsList"><strong>set_inputsList</strong></a>(self, newInputs)</dt></dl>
+
+<dl><dt><a name="Neuron-set_weightList"><strong>set_weightList</strong></a>(self, newWeights)</dt></dl>
+
+<dl><dt><a name="Neuron-toString"><strong>toString</strong></a>(self)</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;transform&nbsp;the&nbsp;neuron&nbsp;in&nbsp;a&nbsp;string</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-exp"><strong>exp</strong></a>(...)</dt><dd><tt><a href="#-exp">exp</a>(x)<br>
+&nbsp;<br>
+Return&nbsp;e&nbsp;raised&nbsp;to&nbsp;the&nbsp;power&nbsp;of&nbsp;x.</tt></dd></dl>
+ <dl><dt><a name="-random"><strong>random</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> method of <a href="random.html#Random">random.Random</a> instance</font></font></dt><dd><tt><a href="#-random">random</a>()&nbsp;-&gt;&nbsp;x&nbsp;in&nbsp;the&nbsp;interval&nbsp;[0,&nbsp;1).</tt></dd></dl>
+ <dl><dt><a name="-tanh"><strong>tanh</strong></a>(...)</dt><dd><tt><a href="#-tanh">tanh</a>(x)<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;hyperbolic&nbsp;tangent&nbsp;of&nbsp;x.</tt></dd></dl>
+</td></tr></table>
+</body></html>
